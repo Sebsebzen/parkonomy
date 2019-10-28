@@ -17,6 +17,7 @@ gem 'webpacker'
 
 # Manually added gems
 gem 'devise'
+gem 'materialize-sass'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
