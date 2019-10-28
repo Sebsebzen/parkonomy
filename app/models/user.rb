@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :bookings
   has_many :carparks
+  has_many :reviews, through: :bookings
 
   validates :email, presence: true
   validates :email, uniqueness: true
