@@ -1,4 +1,5 @@
 //= require rails-ujs
 //= require_tree .
 //= require jquery
-//= require materialize-sprockets
+//= require bootstrap-material-design
+
