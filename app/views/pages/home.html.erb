@@ -3,15 +3,15 @@
     <div class="card text-center w-25 mx-auto">
       <div class="card-body">
         <h5 class="card-title">Search for carparks</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <p class="card-text mb-3">Find cheap carparks that available in your neighbourhood for monthly bookings.</p>
 
       <%= form_tag("/search", method: "get") do %>
-        <%= label_tag(:query, "Search for:", class: "col-form-label-sm") %>
-        <%= text_field_tag(:query, "", class: "form-control") %>
-        <%= label_tag(:date, "From:", class: "col-form-label-sm") %>
-        <%= date_field(:date, :start_date, class: "form-control") %>
-        <%= label_tag(:date, "Until:", class: "col-form-label-sm") %>
-        <%= date_field(:date, :end_date, class: "form-control") %>
+        <%= label_tag(:query, "Address:", class: "col-form-label-lg") %>
+        <%= text_field_tag(:query, "", class: "form-control mb-sm-2") %>
+        <%= label_tag(:date, "From:", class: "col-form-label") %>
+        <%= date_field(:date, :start_date, class: "form-control mb-sm-2") %>
+        <%= label_tag(:date, "Until:", class: "col-form-label") %>
+        <%= date_field(:date, :end_date, class: "form-control mb-sm-2") %>
         <%= submit_tag("Search", class: "btn btn-outline-success m-3") %>
       <% end %>
 

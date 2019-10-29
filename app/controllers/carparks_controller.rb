@@ -6,7 +6,9 @@ class CarparksController < ApplicationController
   end
 
   def search
-    @carparks = Carpark.where(average_rating: params[:q])
+    @carparks = Carpark.where("address ILIKE ?", "%#{params[:query]}%") 
+    @start_month = (params[:date][:start_date]).to_date
+    @end_month = (params[:date][:end_date]).to_date
   end
 
   def show
