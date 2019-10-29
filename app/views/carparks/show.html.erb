@@ -1,27 +1,30 @@
+<div class ="container">
+  <div class ="row">
 
-
-
-<div class="card-trip">
-<img src=<%= @carpark.photo %>>
-  <div class="card-trip-infos">
-    <div>
-      <h2>Carpark Description</h2>
-      <p>Length: <%=@carpark.length %> x Width: <%=@carpark.width %> x Height: <%=@carpark.height %></p>
+    <div class="col-lg-8">
+      <div class="card-trip">
+      <img src=<%= @carpark.photo %>>
+        <div class="card-trip-infos">
+          <div>
+            <h2>Carpark Description</h2>
+            <p>Length: <%=@carpark.length %> x Width: <%=@carpark.width %> x Height: <%=@carpark.height %></p>
+          </div>
+          <h2 class="card-trip-pricing">Rate Per Day: $<%=@carpark.rate_day%></h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        </div>
+      </div>      
     </div>
-    <h2 class="card-trip-pricing">Rate Per Day: $<%=@carpark.rate_day%></h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+
+    <div class="col-lg-4">
+      <div class="form-group">
+        <%= simple_form_for [@carpark, @booking], html: { class: 'form-group' } do |f| %>
+          <%= f.input :start_date, as: :date, html5: true, class: "form-control" %>
+          <%= f.input :end_date, as: :date, html5: true, class: "form-control" %>
+          <%= f.submit "Reserve now", class: "btn btn-outline-success"%>
+        <% end %>
+      </div>      
+    </div>
+
   </div>
+  <%= link_to "Back To All Carparks", carpark_path %>
 </div>
-
-<%= link_to "Back To All Carparks", carpark_path %>
-
-<br>
-
-<div class="form-group">
-  <%= simple_form_for [@carpark, @booking], html: { class: 'form-group' } do |f| %>
-    <%= f.input :start_date, as: :date, html5: true, class: "form-control" %>
-    <%= f.input :end_date, as: :date, html5: true, class: "form-control" %>
-    <%= f.submit "Reserve now", class: "btn btn-outline-success"%>
-  <% end %>
-</div>
-
