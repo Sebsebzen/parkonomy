@@ -4,8 +4,4 @@ class PagesController < ApplicationController
 
   def dashboard
   end
-
-  def search
-    raise
-  end
 end

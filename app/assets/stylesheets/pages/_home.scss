@@ -1,9 +1,18 @@
 // Specific CSS for your home-page
 
 body {
+  min-height: 100vh;
+}
+
+.background-container {
   background: url('https://source.unsplash.com/u6m8qfAEpYY/1920x1080') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  height: 100vh;
+}
+
+.main-container {
+  padding-top: 35px;
 }
