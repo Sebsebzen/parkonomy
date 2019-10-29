@@ -1,9 +1,8 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:create]
 
   def index
-    @bookings = Booking.all
+    @bookings = current_user.bookings
   end
 
   def show
@@ -12,10 +11,12 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
+    @carpark = Carpark.find(params[:carpark_id])
+    @booking.carpark = @carpark
     if @booking.save
-      redirect_to dashboard_path
+      redirect_to bookings_path
     else
-      render :new
+      render "carparks/show"
     end
   end
 
@@ -28,7 +29,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to dashboard_path
+    redirect_to bookings_path
   end
 
   private
@@ -41,8 +42,8 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(
       :user_id,
       :carpark_id,
-      :start_date_time,
-      :end_date_time,
+      :start_date,
+      :end_date,
       :total_price
     )
   end
