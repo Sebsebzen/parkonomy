@@ -31,6 +31,7 @@ class CarparksController < ApplicationController
 
   def update
     @carpark.update(carpark_params)
+    redirect_to carpark_path(@carpark)
   end
 
   def destroy
@@ -53,7 +54,8 @@ class CarparksController < ApplicationController
       :height,
       :latitude,
       :longitude,
-      :rate_hour,
+      :rate_day,
+      :address,
       :photo
     )
   end
