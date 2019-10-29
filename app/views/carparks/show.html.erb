@@ -15,6 +15,14 @@
       </div>      
     </div>
 
+    <h2 class="card-trip-pricing">Rate Per Day: $<%=@carpark.rate_day%></h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+</div>
+
+<%= link_to "Back To All Carparks", carparks_path %>
+
+
     <div class="col-lg-4">
       <div class="form-group">
         <%= simple_form_for [@carpark, @booking], html: { class: 'form-group' } do |f| %>
