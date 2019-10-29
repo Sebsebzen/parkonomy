@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'dashboard', to: "pages#dashboard", as: :dashboard
   get 'search', to: "pages#search", as: :search
-  resources :bookings
+  resources :bookings, except: [:create]
   resources :carparks do
     resources :reviews, only: [:new, :create, :index]
+    resources :bookings, only: [:create]
   end
 
   devise_for :users
