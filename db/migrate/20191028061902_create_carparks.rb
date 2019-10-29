@@ -6,10 +6,14 @@ class CreateCarparks < ActiveRecord::Migration[5.2]
       t.float :length
       t.float :width
       t.float :height
+      t.string :address
       t.string :latitude
       t.string :longitude
-      t.string :rate_hour
+      t.integer :rate_hour
       t.string :photo
+      t.boolean :accessibility
+      t.boolean :indoor
+      t.boolean :secured
 
       t.timestamps
     end
