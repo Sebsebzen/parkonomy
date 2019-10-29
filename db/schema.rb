@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2019_10_28_062043) do
   create_table "bookings", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "carpark_id"
-    t.date "date"
-    t.time "time"
+    t.date "start_date_time"
+    t.date "end_date_time"
     t.integer "total_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -33,10 +33,14 @@ ActiveRecord::Schema.define(version: 2019_10_28_062043) do
     t.float "length"
     t.float "width"
     t.float "height"
+    t.string "address"
     t.string "latitude"
     t.string "longitude"
-    t.string "rate_hour"
+    t.integer "rate_hour"
     t.string "photo"
+    t.boolean "accessibility"
+    t.boolean "indoor"
+    t.boolean "secured"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_carparks_on_user_id"
