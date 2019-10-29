@@ -5,7 +5,9 @@
     <div class="cards">
       <% @carparks.each do |carpark| %>
         <%= link_to carpark_path(carpark), :style => "text-decoration: none" ,:action => 'go' do %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= carpark.photo %>)"><%= carpark.address %>
+
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= carpark.photo %>)><%= carpark.address %>
+
           </div>
         <% end %>
       <% end %>
