@@ -1,1 +1,14 @@
-<h1>Hello Show</>
+<div class="container">
+	<h1><%= @carpark.address %></h1>
+    <hr>
+
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos">
+        <h2>Dimensions</h2>
+        <p>Length: <%=carpark.length %> x Width: <%=carpark.width %> x Height: <%=carpark.height %></p>
+      </div>
+    </div>
+
+<%= link_to "Back", carpark_path %>
+</div>

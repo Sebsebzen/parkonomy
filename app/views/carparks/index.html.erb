@@ -1,1 +1,13 @@
-<h1>Hello Index</>
+<div class="container">
+  <div class="d-flex justify-content-center my-5">
+    <h1>All Carparks</h1>  
+  </div>
+    <div class="cards">
+      <% @carparks.each do |carpark| %>
+        <%= link_to carpark_path(carpark), :style => "text-decoration: none" ,:action => 'go' do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= carpark.image %>)"><%= carpark.address %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+</div>
