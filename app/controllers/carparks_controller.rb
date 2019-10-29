@@ -5,6 +5,10 @@ class CarparksController < ApplicationController
     @carparks = Carpark.all
   end
 
+  def search
+    @carparks = Carpark.where(average_rating: params[:q])
+  end
+
   def show
     @booking = Booking.new
   end
