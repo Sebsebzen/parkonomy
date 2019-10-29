@@ -26,7 +26,6 @@
   Carpark.create!(user: user_1, average_rating: 4,  length: "550", width: "300", height:"200", address: "290 Orchard Rd, #02-28, Singapore 238859",latitude: "1.279670", longitude:"103.851125", rate_day: 15, photo:"https://source.unsplash.com/eUAiEZLhKG8")
   Carpark.create!(user: user_1, average_rating: 2,  length: "550", width: "330", height:"150", address: "1 Harbourfront Walk, Singapore 098585",latitude: "1.277274", longitude:"103.854037", rate_day: 35, photo:"https://source.unsplash.com/x8gaz9cnsNg")
   Carpark.create!(user: user_1, average_rating: 5,  length: "550", width: "330", height:"250", address: "6 Raffles Blvd, Singapore 039594",latitude: "1.279787", longitude:"103.868607", rate_day: 30, photo:"https://source.unsplash.com/Ed1pUKH-zoQ") 
-  
 
   booking = Booking.create!(end_date: Date.today - 1, start_date: Date.today - 3, carpark_id: 1, total_price: 50, user: user_2)
 
