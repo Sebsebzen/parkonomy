@@ -17,7 +17,7 @@
     </div>
 
     <div class="col-lg-4">
-      <div class="card-product-infos">
+      <div class="card-product-infos booking-form-card">
         <%= simple_form_for [@carpark, @booking], html: { class: 'form-group' } do |f| %>
           <%= f.input :start_date, as: :date, html5: true, class: "form-control" %>
           <%= f.input :end_date, as: :date, html5: true, class: "form-control" %>
