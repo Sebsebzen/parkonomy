@@ -4,18 +4,16 @@ class Booking < ApplicationRecord
 
   has_many :reviews, dependent: :destroy
 
-  validate :end_date_before_start_date?
-  validate :start_date_before_today_date?
+  validates :start_date, :end_date, presence: true
+  validate :end_date_after_start_date
 
-  def start_date_before_today_date?
-    if start_date < Date.today
-      errors.add :start_date, "Start date must be later than today's date."
-    end
-  end
+  private
 
-  def end_date_before_start_date?
+  def end_date_after_start_date
+    return if end_date.blank? || start_date.blank?
+
     if end_date < start_date
-      errors.add :end_date, "End date must be later than start date."
+      errors.add(:end_date, "must be after the start date")
     end
-  end
+ end
 end

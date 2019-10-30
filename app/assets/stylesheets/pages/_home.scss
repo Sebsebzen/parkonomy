@@ -6,15 +6,53 @@ body {
   background-blend-mode: normal,color-burn;
 }
 
-.background-container {
-  background: url('https://source.unsplash.com/u6m8qfAEpYY/1920x1080') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
+.home-banner {
+  background-image: url(asset_path("matt-lamers-SPbcqTVoYqE-unsplash.jpg"));
   background-size: cover;
-  -o-background-size: cover;
   height: 100vh;
+  // color: #eee;
+  text-align: left;
+  padding-top: 20vh;
 }
 
-.main-container {
-  padding-top: 35px;
-}
+// .background-container {
+//   background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(asset_path("chuttersnap-zHhFKYYas7o-unsplash.jpg")) no-repeat center fixed;
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   background-size: cover;
+//   -o-background-size: cover;
+//   height: 100vh;
+// }
+
+// .main-container {
+//   padding-top: 35px;
+// }
+
+// Defining a variable
+// $gray: #F4F4F4;
+// $spacer: 8px;
+
+// body {
+//   background: $gray; // Using this variable
+//   font-family: Helvetica;
+// }
+
+// .btn {
+//   padding: $spacer ($spacer * 3);
+// }
+
+// .banner {
+//   background: red;
+
+//   h1 {
+//     font-size: 50px;
+//   }
+// }
+
+// a {
+//   color: grey;
+
+//   &:hover {
+//     color: black;
+//   }
+// }

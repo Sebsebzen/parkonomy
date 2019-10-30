@@ -15,13 +15,18 @@
         </div>
       </div>
     </div>
-
     <div class="col-lg-4">
-      <div class="card-product-infos booking-form-card">
-        <%= simple_form_for [@carpark, @booking], html: { class: 'form-group' } do |f| %>
-          <%= f.input :start_date, as: :date, value: Date.today, html5: true, class: "form-control" %>
-          <%= f.input :end_date, as: :date, value: (Date.today + 2.week), html5: true, class: "form-control" %>
-          <%= f.submit "Reserve now", class: "btn btn-outline-success"%>
+      <div class="card-product-infos booking-form-card" id='carpark-booking-dates' data-unavailable="<%= @carpark.unavailable_dates.to_json %>">
+        <%= simple_form_for [@carpark, @booking] do |f| %>
+          <%= f.input :start_date, as: :string, type: :text, class: "form-control" %>
+          <%= f.input :end_date, as: :string, type: :text, class: "form-control" %>
+          <% if user_signed_in? %>
+            <% if current_user.id != @carpark.user_id  %>
+              <%= f.submit "Reserve now", class: "btn btn-outline-success"%>
+            <% else %>
+              <%= link_to "My Dashboard", bookings_path, class: "btn btn-outline-success" %>
+            <% end %>
+          <% end %>
         <% end %>
       </div>
     </div>
