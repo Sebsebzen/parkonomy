@@ -22,7 +22,6 @@ gem 'bootstrap-material-design'
 gem 'geocoder'
 gem 'devise-bootstrap-views', '~> 1.0'
 
-
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

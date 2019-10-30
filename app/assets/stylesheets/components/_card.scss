@@ -24,8 +24,9 @@
   height: 400px;
   width: 100%;
   object-fit: fill;
-  
+
 }
+
 
 .card-trip h2 {
   font-size: 16px;
@@ -83,3 +84,38 @@
   justify-content: center;
   align-items: center;
 }
+
+.card-main-search {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  margin: 60px 0 0 60px;
+  padding: 12px;
+  width: 25%;
+  opacity: 0.8;
+}
+
+.card-main-search .card-title {
+  font-size: 34px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-main-search p {
+  font-size: 14px;
+  margin: 12px 0;
+  opacity: 0.6;
+}
+
+.card-main-search a {
+  text-align: right;
+}
+
+.submit-button {
+  display:flex;
+  justify-content: flex-end;
+  margin-top: 2em;
+}
+
+
