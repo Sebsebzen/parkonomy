@@ -4,8 +4,17 @@
     <% @bookings.each do |booking| %>
       <div class="card-product">
         <img src=<%= booking.carpark.photo %> />
-        <div class="card-product-infos">
-          <p class="my-1" id="remaining_days"><%= (booking.start_date - @today_date).to_f.ceil %> days left</p>
+        <div class="card-product-booking-infos">
+          <% if booking.start_date > @today_date %>
+            <p class="my-1" id="remaining_days">
+              <%= (booking.start_date - @today_date).to_f.ceil %>
+              days left
+            </p>
+          <% else %>
+            <p class="my-1" id="remaining_days">
+              Current booking
+            </p>
+          <% end %>
           <h2><%= link_to booking.carpark.address, edit_booking_path(booking) %></h2>
           <p>Booking date: <%= booking.start_date %> to <%= booking.end_date %></p>
           <%= link_to "Edit", edit_booking_path(booking), class: "btn btn-primary" %>

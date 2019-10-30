@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
 
   def index
     @today_date = Date.today
-    @bookings = current_user.bookings.where("start_date > ?", @today_date).sort_by { |day| day[:start_date] }
+    @bookings = current_user.bookings.where("start_date >= ?", @today_date).sort_by { |day| day[:start_date] }
   end
 
   def show
