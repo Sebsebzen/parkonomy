@@ -1,9 +1,10 @@
 <div class="container">
-	<div class="d-flex justify-content-center my-5">
-		<h1>Edit Carpark</h1>
+	<div class="row justify-content-center">
+		<h1 class="head text-center">Edit Carpark</h1>
 	</div>
-	<div class="row d-flex justify-content-center">
-		<div class="col-6 py-5 px-4" id="new-carpark-form-container" style="border-radius: 5px;">
+	<hr>
+	<div class="row justify-content-center">
+		<div class="col-md-4 card-product-infos m-2" id="edit-carpark-form-container">
 			<%= simple_form_for(@carpark) do |f| %>
         <div class="form-inputs">
         <%= f.input :address %>
@@ -14,9 +15,12 @@
 			  </div>
 
 			  <div class="form-actions">
-			    <%= f.button :submit, :class => "btn btn-ghost2 mt-4"%>
+			    <%= f.button :submit, :class => "btn btn-outline-success"%>
 			  </div>
 			<% end %>
 		</div>
 	</div>
 </div>
+
+
+
