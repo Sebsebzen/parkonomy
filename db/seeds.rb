@@ -8,9 +8,9 @@
   
   require 'faker' 
 
-  Review.destroy_all
-  Booking.destroy_all
-  User.destroy_all
+  # Review.destroy_all
+  # Booking.destroy_all
+  # User.destroy_all
 
   user_1 = User.create!(email: "test@test.com", password: "password") 
   user_2 = User.create!(email: "boker@test.com", password: "password") 
