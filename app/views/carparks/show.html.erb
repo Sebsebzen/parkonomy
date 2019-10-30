@@ -12,7 +12,7 @@
           <h2 class="card-trip-pricing">Rate Per Day: $<%=@carpark.rate_day%></h2>
           <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
         </div>
-      </div>      
+      </div>
     </div>
 
     <h2 class="card-trip-pricing">Rate Per Day: $<%=@carpark.rate_day%></h2>
@@ -30,9 +30,9 @@
           <%= f.input :end_date, as: :date, html5: true, class: "form-control" %>
           <%= f.submit "Reserve now", class: "btn btn-outline-success"%>
         <% end %>
-      </div>      
+      </div>
     </div>
 
   </div>
-  <%= link_to "Back To All Carparks", carpark_path %>
+  <%= link_to "Back To All Carparks", carparks_path %>
 </div>

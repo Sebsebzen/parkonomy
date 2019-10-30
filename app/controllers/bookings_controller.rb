@@ -10,9 +10,13 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = current_user
     @carpark = Carpark.find(params[:carpark_id])
+    total_day = (@booking.end_date - @booking.start_date).to_f.ceil
+    @total_price = @carpark.rate_day * total_day
+
+    @booking.user = current_user
     @booking.carpark = @carpark
+    @booking.total_price = @total_price
     if @booking.save
       redirect_to bookings_path
     else

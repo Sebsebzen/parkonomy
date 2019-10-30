@@ -1,3 +1,15 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
-<%= @bookings.first %>
+<div class="container py-10">
+  <h1 class="head text-center">All Bookings</h1>
+  <div class="col-md-8 my-3 mx-auto">
+    <% @bookings.each do |booking| %>
+      <div class="card-product">
+        <img src=<%= booking.carpark.photo %> />
+        <div class="card-product-infos">
+          <h2><%= booking.carpark.address %></h2>
+          <p>Booking date: <%= booking.start_date %> to <%= booking.end_date %></p>
+          <%= link_to "View booking details", booking_path(booking), class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
