@@ -1,1 +1,30 @@
-<h1>Hello Edit</>
+<div class ="container">
+  <div class ="row">
+
+    <div class="col-lg-8">
+      <div class="card-trip">
+      <img src=<%= @booking.carpark.photo %>>
+        <div class="card-trip-infos">
+          <div>
+            <h2>Carpark Description</h2>
+            <p>Length: <%=@booking.carpark.length %> x Width: <%=@booking.carpark.width %> x Height: <%=@booking.carpark.height %></p>
+          </div>
+          <h2 class="card-trip-pricing">Rate Per Day: $<%=@booking.carpark.rate_day%></h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="form-group">
+        <%= simple_form_for [@booking], html: { class: 'form-group' } do |f| %>
+          <%= f.input :start_date, as: :date, html5: true, class: "form-control" %>
+          <%= f.input :end_date, as: :date, html5: true, class: "form-control" %>
+          <%= f.submit "Update booking", class: "btn btn-outline-success"%>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+  <%= link_to "Back to my bookings", bookings_path %>
+</div>

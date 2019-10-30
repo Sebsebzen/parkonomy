@@ -1,8 +1,10 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
+  before_action :set_booking, only: [:edit, :update,:destroy]
 
   def index
-    @bookings = current_user.bookings
+    @today_date = Date.today
+    @bookings = current_user.bookings.where("start_date > ?", @today_date).sort_by { |day| day[:start_date] }
   end
 
   def show
@@ -29,6 +31,11 @@ class BookingsController < ApplicationController
 
   def update
     @booking.update(booking_params)
+    if @booking.save
+      redirect_to bookings_path
+    else
+      render :edit
+    end
   end
 
   def destroy
