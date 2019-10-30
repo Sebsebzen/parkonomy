@@ -1,3 +1,4 @@
+<br>
 <div class ="container">
   <div class ="row">
 
@@ -6,8 +7,8 @@
       <img src=<%= @carpark.photo %>>
         <div class="card-trip-infos">
           <div>
-            <h2>Carpark Description</h2>
-            <p>Length: <%=@carpark.length %> x Width: <%=@carpark.width %> x Height: <%=@carpark.height %></p>
+            <h2><%=@carpark.address %></h2>
+            <p>Length: <%=@carpark.length %>cm x Width: <%=@carpark.width %>cm x Height: <%=@carpark.height %>cm</p>
           </div>
           <h2 class="card-trip-pricing">Rate Per Day: $<%=@carpark.rate_day%></h2>
           <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
@@ -16,7 +17,7 @@
     </div>
 
     <div class="col-lg-4">
-      <div class="form-group">
+      <div class="card-product-infos booking-form-card">
         <%= simple_form_for [@carpark, @booking], html: { class: 'form-group' } do |f| %>
           <%= f.input :start_date, as: :date, html5: true, class: "form-control" %>
           <%= f.input :end_date, as: :date, html5: true, class: "form-control" %>
@@ -24,7 +25,12 @@
         <% end %>
       </div>
     </div>
-
   </div>
-  <%= link_to "Back To All Carparks", carparks_path %>
+  <br>
+  <div>
+  <%= link_to "Edit Carpark", edit_carpark_path, class: "btn btn-primary btn-sm" %>
+  </div>
+  <%= link_to "Back To All Carparks", carparks_path, class: "btn btn-primary btn-sm" %>
+  </div>
+  <div>
 </div>
