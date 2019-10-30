@@ -6,16 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
   
-  require 'faker' 
+  # require 'faker' 
 
   # Review.destroy_all
   # Booking.destroy_all
   # User.destroy_all
 
-  user_1 = User.create!(email: "test@test.com", password: "password") 
-  user_2 = User.create!(email: "boker@test.com", password: "password") 
+  # user_1 = User.create!(email: "test@test.com", password: "password") 
+  # user_2 = User.create!(email: "boker@test.com", password: "password") 
 
-  puts "creting carparks!"
+  puts "creating carparks!"
   Carpark.create!(user: user_1, average_rating: 5,  length: "500", width: "300", height:"300", address: "44 Holland Dr, Singapore 270044",latitude: 1.317815, longitude: 103.858230, rate_day: 10, photo:"https://source.unsplash.com/XlydZHgSQOs")
   Carpark.create!(user: user_1, average_rating: 4,  length: "500", width: "300", height:"200", address: "402 Commonwealth Dr, Singapore 149599",latitude: 1.356573, longitude: 103.973039, rate_day: 15, photo:"https://source.unsplash.com/JKZkFk8WnrI")  
   Carpark.create!(user: user_1, average_rating: 5,  length: "500", width: "350", height:"200", address: "1A Commonwealth Dr, Singapore 141001",latitude: 1.278443, longitude: 103.865582, rate_day: 20, photo:"https://source.unsplash.com/_rxObsjG8G0")
@@ -29,12 +29,12 @@
 
   # booking = Booking.create!(end_date: Date.today - 1, start_date: Date.today - 3, carpark_id: 1, total_price: 50, user: user_2)
 
-  10.times do
-  puts "creating a new review"
-  review = Review.new(
-    content: "#{Faker::Restaurant.review}",
-    rating: rand(0..5), 
-    booking: booking
-  )
-  review.save!
-  end
+  # 10.times do
+  # puts "creating a new review"
+  # review = Review.new(
+  #   content: "#{Faker::Restaurant.review}",
+  #   rating: rand(0..5), 
+  #   booking: booking
+  # )
+  # review.save!
+  # end
