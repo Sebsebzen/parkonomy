@@ -7,9 +7,17 @@ class CarparksController < ApplicationController
   end
 
   def search
-    @carparks = Carpark.where("address ILIKE ?", "%#{params[:query]}%") 
+    # @carparks = Carpark.where("address ILIKE ?", "%#{params[:query]}%") 
+    @carparks = Carpark.near('Singapore, Commonwealth Road', 10)      # venues within 10 km of Tour Eiffel
     @start_month = (params[:date][:start_date]).to_date
     @end_month = (params[:date][:end_date]).to_date
+
+    @markers = @carparks.map do |carpark|
+      {
+        lat: carpark.latitude,
+        lng: carpark.longitude
+      }
+    end
   end
 
   def show

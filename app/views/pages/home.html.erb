@@ -7,7 +7,7 @@
 
       <%= form_tag("/search", method: "get") do %>
         <%= label_tag(:query, "Address:", class: "col-form-label-lg") %>
-        <%= text_field_tag(:query, "", class: "form-control mb-sm-2") %>
+        <%= text_field_tag(:query, "", id: "search_address", class: "form-control mb-sm-2") %>
         <%= label_tag(:date, "From:", class: "col-form-label") %>
         <%= date_field(:date, :start_date, class: "form-control mb-sm-2") %>
         <%= label_tag(:date, "Until:", class: "col-form-label") %>
