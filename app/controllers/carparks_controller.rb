@@ -31,7 +31,7 @@ class CarparksController < ApplicationController
   def create
     @carpark = Carpark.new(carpark_params)
     if @carpark.save
-      redirect_to new_carpark_path(@carpark)
+      redirect_to carpark_path(@carpark)
     else
       render :new
     end
