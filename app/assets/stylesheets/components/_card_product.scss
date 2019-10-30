@@ -1,7 +1,7 @@
 .card-product {
   overflow: hidden;
   height: 160px;
-  // border-radius: 4px;
+  border-radius: 5px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -29,6 +29,6 @@
   margin-top: 8px;
 }
 
-.card-product .card-product-infos {
+.card-product .card-product-booking-infos {
   padding: 16px;
 }

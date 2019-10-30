@@ -1,7 +1,0 @@
-<div class="form-group">
-  <%= simple_form_for [@carpark, @booking], html: { class: 'form-group' } do |f| %>
-    <%= f.input :start_date, as: :date, html5: true, class: "form-control" %>
-    <%= f.input :end_date, as: :date, html5: true, class: "form-control" %>
-    <%= f.submit "Reserve now", class: "btn btn-outline-success"%>
-  <% end %>
-</div>
