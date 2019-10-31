@@ -15,6 +15,22 @@ body {
   padding-top: 20vh;
 }
 
+.form-control {
+  background-image: linear-gradient(0deg,#ffffff 2px,rgba(255,255,255,0) 0),linear-gradient(0deg,rgba(255,255,255,.26) 1px,transparent 0);
+}
+
+#home-form {
+  display: flex;
+  width: 75%;
+  color: white;
+}
+
+#search-button {
+  background: transparent;
+  color: white;
+  opacity: 0.9;
+  border: none;
+}
 // .background-container {
 //   background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(asset_path("chuttersnap-zHhFKYYas7o-unsplash.jpg")) no-repeat center fixed;
 //   -webkit-background-size: cover;
@@ -28,31 +44,3 @@ body {
 //   padding-top: 35px;
 // }
 
-// Defining a variable
-// $gray: #F4F4F4;
-// $spacer: 8px;
-
-// body {
-//   background: $gray; // Using this variable
-//   font-family: Helvetica;
-// }
-
-// .btn {
-//   padding: $spacer ($spacer * 3);
-// }
-
-// .banner {
-//   background: red;
-
-//   h1 {
-//     font-size: 50px;
-//   }
-// }
-
-// a {
-//   color: grey;
-
-//   &:hover {
-//     color: black;
-//   }
-// }
