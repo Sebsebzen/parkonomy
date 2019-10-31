@@ -10,6 +10,6 @@ import { initFlatpickr } from '../plugins/init_flatpickr';
 initUpdateNavbarOnScroll();
 initAutocomplete();
 initMapbox();
-// loadDynamicBannerText();
 initFlatpickr();
+// loadDynamicBannerText();
 
