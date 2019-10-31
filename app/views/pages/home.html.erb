@@ -16,20 +16,17 @@
               <%#= date_field(:date, :end_date, value: (Date.today + 2.week), class: "form-control mb-sm-2") %>
               <%#= submit_tag("Search", class: "btn btn-outline-success mt-4") %>
             <%# end %> -->
-            <form class="form-inline">
-              <div class="form-group">
-                <h3 class="search-title">
-                   <span id="banner-typed-text"></span>
-                </h3>
-                <input type="text" for="query" class="form-control" id="search_address">
-                <span class="bmd-help">Enter the name of area, city or country.</span>
-                <span class="form-group bmd-form-group"> <!-- needed to match padding for floating labels -->
-                  <button type="submit" for="search" class="btn bmd-btn-icon">
-                    <i class="material-icons">Search</i>
-                  </button>
-                </span>
-              </div>
-            </form>
+              <%= form_tag("/search", method: "get", id: "home_form", class: "my-5 text-center px-5" ) do %>
+                  <div class="search-title">
+                    <%= text_field_tag(:query, "", id: "search_address", class: "search-title form-control text-white p-5") %>
+                  </div>
+                  <div class="d-flex">
+                    <%= date_field(:date, :start_date, value: Date.today, class: "form-control text-white mb-sm-2") %>
+                    <%= date_field(:date, :end_date, value: (Date.today + 2.week), class: "form-control text-white mb-sm-2") %>
+                  </div>
+                  <%#= submit_tag("Search", class: "btn btn-outline-success mt-4") %>
+              <!-- </form> -->
+              <% end %>
           </div>
         </div>
       </div>
