@@ -24,7 +24,9 @@ class CarparksController < ApplicationController
     @markers = @carparks.map do |carpark|
       {
         lat: carpark.latitude,
-        lng: carpark.longitude
+        lng: carpark.longitude,
+        id: carpark.id,
+        address: carpark.address
       }
     end
   end
