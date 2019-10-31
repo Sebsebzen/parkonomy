@@ -1,7 +1,6 @@
 <br>
 <div class ="container">
   <div class ="row">
-
     <div class="col-lg-8">
       <div class="card-trip">
       <img src=<%= @carpark.photo %>>
@@ -32,12 +31,27 @@
         <% end %>
       </div>
     </div>
-  </div>
+    </div>
   <br>
   <div>
-  <%= link_to "Edit Carpark", edit_carpark_path(@carpark), class: "btn btn-primary btn-sm" %>
-  </div>
-  <%= link_to "Back To All Carparks", carparks_path, class: "btn btn-primary btn-sm" %>
-  </div>
-  <div>
+    <%= link_to "Edit Carpark", edit_carpark_path(@carpark), class: "btn btn-primary btn-sm" %>
+      </div>
+      <%= link_to "Back To All Carparks", carparks_path, class: "btn btn-primary btn-sm" %>
+      </div>
+    <div>
 </div>
+<br>
+<div class ="container">
+  <% @reviews.each do |review| %>  
+    <div class ="row">
+      <div class="col-lg-8">
+        <div class="card-product-review">
+          <h2><%= review.rating %></h2>
+          <p>"<%= review.content %>" - <strong><%= review.booking.user.email %></strong></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+</div>
+
+

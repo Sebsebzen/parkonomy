@@ -33,6 +33,7 @@ class CarparksController < ApplicationController
 
   def show
     @booking = Booking.new
+    @reviews = @carpark.reviews
   end
 
   def new

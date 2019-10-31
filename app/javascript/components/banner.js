@@ -4,7 +4,7 @@ const loadDynamicBannerText = () => {
   const banner = document.querySelector("#banner-typed-text");
   if (banner) {
     new Typed('#banner-typed-text', {
-      strings: ["Search for Carpark"],
+      strings: ["Singapore", "Tokyo", "London"],
       typeSpeed: 80,
       loop: true
     });
