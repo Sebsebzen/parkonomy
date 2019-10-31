@@ -1,6 +1,13 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  background-color: transparent;
+  transition: 0.3s background-color ease;
+  padding: 0 80px;
+}
+
+.navbar-lewagon-white {
+  background-color: white;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +16,28 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.logo {
+  // background-image: asset-url('logo.png');
+  // background-size: cover;
+  // height: 50px;
+  // font-family: 'Abril Fatface', cursive;
+  font-size: 48px;
+  color: rgb(253, 16, 21);
+  margin: 4px 0;
+}
+
+// #app_name {
+//   // font-family: 'Anton', sans-serif;
+//   font-family: 'Abril Fatface', cursive;
+//   font-size: 32px;
+//   color: white;
+// }
+
+.nav-link {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 12px;
 }

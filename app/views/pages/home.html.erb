@@ -1,35 +1,26 @@
-<div class="background-container">
-  <div class="main-container">
-    <div class="card text-center w-25 mx-auto">
-      <div class="card-body">
-        <h5 class="card-title">Search for carparks</h5>
-        <p class="card-text mb-3">Find cheap carparks that available in your neighbourhood for monthly bookings.</p>
+<div class="home-banner">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-sm-12">
+        <div class="card-search my-3">
+          <div class="card-body m-3">
+            <h1 class="card-title">
+               <span id="banner-typed-text"></span>
+            </h1>
 
-      <%= form_tag("/search", method: "get") do %>
-        <%= label_tag(:query, "Address:", class: "col-form-label-lg") %>
-        <%= text_field_tag(:query, "", id: "search_address", class: "form-control mb-sm-2") %>
-        <%= label_tag(:date, "From:", class: "col-form-label") %>
-        <%= date_field(:date, :start_date, value: Date.today, class: "form-control mb-sm-2") %>
-        <%= label_tag(:date, "Until:", class: "col-form-label") %>
-        <%= date_field(:date, :end_date, value: (Date.today + 2.week), class: "form-control mb-sm-2") %>
-        <%= submit_tag("Search", class: "btn btn-outline-success m-3") %>
-      <% end %>
+            <p class="card-text mb-3">Find second home for your car, wherever you are, in Singapore.</p>
 
-      <%# <form action="/search">
-        <div class="form-group">
-          <label for="inputAddress" class="form-control-sm">Address:</label>
-          <input name="q" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            <%= form_tag("/search", method: "get") do %>
+              <%= label_tag(:query, "Address:", class: "col-form-label-lg") %>
+              <%= text_field_tag(:query, "", id: "search_address", class: "form-control mb-sm-2") %>
+              <%= label_tag(:date, "From:", class: "col-form-label") %>
+              <%= date_field(:date, :start_date, value: Date.today, class: "form-control mb-sm-2") %>
+              <%= label_tag(:date, "Until:", class: "col-form-label") %>
+              <%= date_field(:date, :end_date, value: (Date.today + 2.week), class: "form-control mb-sm-2") %>
+              <%= submit_tag("Search", class: "btn btn-outline-success mt-4") %>
+            <% end %>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="inputAddress" class="form-control-sm">Rent from:</label>
-          <input name="start" type="date" class="form-control" id="fromDate">
-        </div>
-        <div class="form-group">
-          <label for="inputAddress" class="form-control-sm">Rent until:</label>
-          <input name="end" type="date" class="form-control" id="untilDate">
-        </div>
-        <button type="submit" class="btn btn-outline-success">Search!</button>
-      </form> %>
       </div>
     </div>
   </div>
