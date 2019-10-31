@@ -45,14 +45,14 @@
 
 <br>
 
-<% reviews = ["great", "awesome", "wow"] %>
+
 
 <div class ="container">
-  <% reviews.each do |review| %>  
+  <% @reviews.each do |review| %>  
     <div class ="row">
       <div class="col-lg-8">
         <div class="card-product-review">
-          <p>"<%= review %>" - </p>
+          <p>"<%= review.content %>"  (<%= review.rating %>) stars  - <%= user.email %></p>
         </div>
       </div>
     </div>
