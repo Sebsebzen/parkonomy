@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :set_review, only: [:show]
 
   def index
     @reviews = Review.all
@@ -15,6 +16,19 @@ class ReviewsController < ApplicationController
     else
       render :new
     end
+  end
+
+  private
+
+  def set_review
+    @review = Review.find(params[:id])
+  end
+
+  def review_params
+    params.require(:review).permit(
+      :content,
+      :rating
+    )
   end
 
 end

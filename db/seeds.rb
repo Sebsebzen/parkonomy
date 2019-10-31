@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
   
-  # require 'faker' 
+  require 'faker' 
 
   # Review.destroy_all
   puts "destroying old seeds!"
@@ -31,14 +31,14 @@
   Carpark.create!(user: user_1, average_rating: 5,  length: "550", width: "330", height:"250", address: "6 Raffles Blvd, Singapore 039594",latitude: 1.279787, longitude: 103.868607, rate_day: 30, photo:"https://source.unsplash.com/Ed1pUKH-zoQ") 
 
   puts "creating bookings!"
-  Booking.create!(end_date: Date.today + 10, start_date: Date.today - 3, carpark: carpark_1, total_price: 50, user: user_2)
+  booking = Booking.create!(end_date: Date.today + 10, start_date: Date.today - 3, carpark: carpark_1, total_price: 50, user: user_2)
 
-  # 10.times do
-  # puts "creating a new review"
-  # review = Review.new(
-  #   content: "#{Faker::Restaurant.review}",
-  #   rating: rand(0..5), 
-  #   booking: booking
-  # )
-  # review.save!
-  # end
+  10.times do
+  puts "creating a new review"
+  review = Review.new(
+    content: "#{Faker::Restaurant.review}",
+    rating: rand(0..5), 
+    booking: booking
+  )
+  review.save!
+  end
