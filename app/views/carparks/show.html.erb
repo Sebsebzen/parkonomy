@@ -30,8 +30,11 @@
         <% end %>
       </div>
     </div>
-  </div>
+    </div>
+
   <br>
+  
+
   <div>
   <%= link_to "Edit Carpark", edit_carpark_path(@carpark), class: "btn btn-primary btn-sm" %>
   </div>
@@ -39,3 +42,21 @@
   </div>
   <div>
 </div>
+
+<br>
+
+<% reviews = ["great", "awesome", "wow"] %>
+
+<div class ="container">
+  <% reviews.each do |review| %>  
+    <div class ="row">
+      <div class="col-lg-8">
+        <div class="card-product-review">
+          <p>"<%= review %>" - </p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+</div>
+
+

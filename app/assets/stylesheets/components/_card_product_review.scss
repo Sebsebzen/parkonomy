@@ -1,27 +1,29 @@
-.card-product {
+
+
+.card-product-review {
   overflow: hidden;
   height: 160px;
   border-radius: 5px;
-  background: white;
+  background:#f7f7f7;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   margin: 20px 0;
 }
 
-.card-product img {
+.card-product-review img {
   height: 100%;
   width: 160px;
   object-fit: cover;
 }
 
-.card-product h2 {
+.card-product-review h2 {
   font-size: 24px;
-  font-weight: bold;
+  font-weight: italic;
   margin: 0;
 }
 
-.card-product p {
+.card-product-review p {
   font-size: 18px;
   line-height: 1.4;
   opacity: .7;
@@ -29,7 +31,6 @@
   margin-top: 8px;
 }
 
-.card-product .card-product-booking-infos {
+.card-product-review .card-product-review-booking-infos {
   padding: 16px;
 }
-
