@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="head text-center">Incoming Bookings</h1>
+  <h1 class="head text-center mt-5 pt-5">Incoming Bookings</h1>
   <div class="col-md-8 my-3 mx-auto">
     <% @bookings.each do |booking| %>
       <div class="card-product">
@@ -15,7 +15,7 @@
               Current booking
             </p>
           <% end %>
-          <h2><%= link_to booking.carpark.address, edit_booking_path(booking) %></h2>
+          <h2 id="booking-link"><%= link_to booking.carpark.address, edit_booking_path(booking) %></h2>
           <p>Booking date: <%= booking.start_date %> to <%= booking.end_date %></p>
           <%= link_to "Edit", edit_booking_path(booking), class: "btn btn-primary" %>
           <%= link_to "Cancel", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel the booking?" }, class: "btn btn-primary" %>
