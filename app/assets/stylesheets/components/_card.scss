@@ -83,15 +83,36 @@
 }
 
 .card-search {
+  display: flex;
+  justify-content: center;
   overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background: none;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
-  opacity:0.8;
+  color: white;
+  // opacity: 0.8;
+  font-style: bold;
+  text-align: center;
+}
+
+.card-search h1 {
+  font-size: 48px;
+  font-family: 'Abril Fatface';
+}
+
+.card-search-body {
+  padding-top: 1em;
 }
 
 .card-search p {
   font-size: 16px;
   opacity: 0.8;
   margin: 0;
+}
+
+.search-title {
+  font-size: 36px;
+  color: $light-gray;
+  opacity: 0.8;
+
 }

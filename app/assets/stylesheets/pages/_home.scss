@@ -7,7 +7,7 @@ body {
 }
 
 .home-banner {
-  background-image: url(asset_path("matt-lamers-SPbcqTVoYqE-unsplash.jpg"));
+  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(asset_path("matt-lamers-SPbcqTVoYqE-unsplash.jpg"));
   background-size: cover;
   height: 100vh;
   // color: #eee;
