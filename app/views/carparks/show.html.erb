@@ -17,16 +17,16 @@
     <div class="col-lg-4">
       <div class="card-product-infos booking-form-card" id='carpark-booking-dates' data-unavailable="<%= @carpark.unavailable_dates.to_json %>">
         <%= simple_form_for [@carpark, @booking] do |f| %>
-          <%= f.input :start_date, as: :string, type: :text, class: "form-control" %>
-          <%= f.input :end_date, as: :string, type: :text, class: "form-control" %>
+          <%= f.input :start_date, as: :string, type: :text, class: "form-control ", placeholder: "Select your start date" %>
+          <%= f.input :end_date, as: :string, type: :text, class: "form-control", placeholder: "Select your end date" %>
           <% if user_signed_in? %>
             <% if current_user.id != @carpark.user_id  %>
-              <%= f.submit "Reserve now", class: "btn btn-outline-success"%>
+              <%= f.submit "Reserve now", class: "btn btn-outline-success mt-5"%>
             <% else %>
-              <%= link_to "My Dashboard", bookings_path, class: "btn btn-outline-success" %>
+              <%= link_to "My Dashboard", bookings_path, class: "btn btn-outline-success mt-5" %>
             <% end %>
           <% else %>
-            <%= f.submit "Reserve now", class: "btn btn-outline-success"%>
+            <%= f.submit "Reserve now", class: "btn btn-outline-success mt-5"%>
           <% end %>
         <% end %>
       </div>
@@ -34,15 +34,19 @@
     </div>
   <br>
   <div>
-    <%= link_to "Edit Carpark", edit_carpark_path(@carpark), class: "btn btn-primary btn-sm" %>
-      </div>
+    <% if user_signed_in? %>
+      <% if current_user.id == @carpark.user_id  %>
+        <%= link_to "Edit Carpark", edit_carpark_path(@carpark), class: "btn btn-primary btn-sm" %>
+      <% end %>
+    <% end %>
+    </div>
       <%= link_to "Back To All Carparks", carparks_path, class: "btn btn-primary btn-sm" %>
-      </div>
-    <div>
+    </div>
+  <div>
 </div>
 <br>
 <div class ="container">
-  <% @reviews.each do |review| %>  
+  <% @reviews.each do |review| %>
     <div class ="row">
       <div class="col-lg-8">
         <div class="card-product-review">

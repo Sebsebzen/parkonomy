@@ -8,7 +8,11 @@
 ></div>
 <div class="container">
   <div class="d-flex justify-content-center my-5">
-    <h1 class="display-4">All matching Carparks for "<%= params[:query] %>" within 10km</h1>  
+    <% if @carparks.length > 0 %>
+      <h1 class="display-4">All matching Carparks for "<%= params[:query] %>" within 10km</h1>
+    <% else %>
+      <h1 class="display-4">No result matching <%= params[:query].capitalize %> </h1>
+    <% end %>
   </div>
     <div class="cards">
       <% @carparks.each do |carpark| %>

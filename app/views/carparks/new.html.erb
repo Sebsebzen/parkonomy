@@ -1,27 +1,34 @@
-<div class="container">
+<div class="container mt-5">
 	<div class="row justify-content-center">
-		<h1 class="head text-center">Please create your carpark</h1>
+		<h1 class="head text-center my-3 py-4">Create your carpark</h1>
 	</div>
-	<hr>
 	<div class="row justify-content-center">
-		<div class="col-md-4 card-product-infos m-2" id="create-carpark-form-container">
+		<div class="col-md-8 card-product-infos m-4 py-4" id="create-carpark-form-container">
 			<%= simple_form_for(@carpark) do |f| %>
         <div class="form-inputs">
-        <%= f.input :address %>
-          <%= f.input :length %>
-          <%= f.input :width %>
-          <%= f.input :height %>
-					<%= f.input :rate_day %>
-					<%= f.input :photo, placeholder: "Insert Photo Url" %>
+          <div class="col-md-8 mx-auto">
+            <%= f.input :address %>
+          </div>
+          <div class="d-flex col-md-8 mx-auto">
+            <%= f.input :length, placeholder: "in cm" %>
+            <%= f.input :width, placeholder: "in cm" %>
+            <%= f.input :height, placeholder: "in cm" %>
+          </div>
+          <div class="d-flex col-md-8 mx-auto">
+            <div>
+              <%= f.input :rate_day, class: "col-md-4", placeholder: "$" %>
+              <%= f.input :photo, placeholder: "Insert Photo Url", class: "col-md-4" %>
+            </div>
+    			  <div class="form-actions my-auto d-flex align-items-end .align-content-end flex-column col-md-6">
+    			    <%= f.button :submit, class: "btn btn-outline-success mt-5 py-3 px-4"%>
+              <%= link_to "Back to Homepage", root_path, class: "btn btn-outline-success my-3 py-3" %>
+    			  </div>
+          </div>
 			  </div>
 
-			  <div class="form-actions">
-			    <%= f.button :submit, :class => "btn btn-primary btn-lg btn-block"%>
-			  </div>
 			<% end %>
 		</div>
 	</div>
 </div>
 <br>
-<%= link_to "Back To Home", root_path, class: "btn btn-primary btn-sm" %>
 

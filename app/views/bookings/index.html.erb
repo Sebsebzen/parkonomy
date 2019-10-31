@@ -1,6 +1,6 @@
-<div class="container">
-  <h1 class="head text-center mt-5 pt-5">Upcoming Bookings</h1>
-  <div class="col-md-8 my-3 mx-auto">
+<div class="container my-5 pt-5">
+  <h1 class="head text-center my-3">Upcoming Bookings</h1>
+  <div class="col-md-8 mt-5 mx-auto">
     <% @bookings.each do |booking| %>
       <div class="card-product">
         <img src=<%= booking.carpark.photo %> />

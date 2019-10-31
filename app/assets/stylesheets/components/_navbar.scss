@@ -57,8 +57,13 @@ active > .nav-link {
 .navbar li {
   margin: auto 12px;
   padding: 0;
-
 }
+
+#login-btn {
+  margin: auto 12px;
+  padding: 8px 24px;
+}
+
 #booking-link > a {
   color: $gray;
 }
