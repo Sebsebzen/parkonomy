@@ -21,10 +21,6 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-
 .logo {
   // background-image: asset-url('logo.png');
   // background-size: cover;
@@ -33,6 +29,8 @@
   font-size: 48px;
   color: rgb(253, 16, 21);
   margin: 4px 0;
+  height: 48px;
+  width: 48px;
 }
 
 // #app_name {
