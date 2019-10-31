@@ -9,16 +9,24 @@ const initMapbox = () => {
     map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
   };
 
-  const addMarkersToMap = (map, markers) => {
+  const setLinkToMarkers = (markers) => {
     markers.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
-  
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .setPopup(popup) // add this
-        .addTo(map);
+      console.log(marker);
+      marker.addListener('click', function() {
+        console.log(marker);
+      });
     });
   };
+  
+
+  // const addMarkersToMap = (map, markers) => {
+  //   markers.forEach((marker) => {
+  
+  //     new mapboxgl.Marker()
+  //       .setLngLat([ marker.lng, marker.lat ])
+  //       .addTo(map);
+  //   });
+  // };
 
   if (mapElement) { // only build a map if there's a div#map to inject into
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
@@ -28,12 +36,23 @@ const initMapbox = () => {
     });
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
+      // const el = document.createElement('div');
+      // el.className = 'marker';
+      // el.setAttribute('href', '/carparks/' + marker.id);
+
+      // el.addEventListener('click', function() {
+      //   window.alert(marker.id);
+      // });
+
       new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
+        .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+        .setHTML('<strong3>' + marker.address + '</strong><br><a href="/carparks/' + marker.id + '">View this carpark</a>'))
         .addTo(map);
     });
-    addMarkersToMap(map, markers);
+    // addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
+    // New function here
   }
 };
 
