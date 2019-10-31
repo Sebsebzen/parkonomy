@@ -23,14 +23,14 @@
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Incoming Bookings", "/bookings", class: "dropdown-item" %>
+            <%= link_to "Make a booking", "/", class: "dropdown-item" %>
             <%= link_to "Rent out your carpark", "/carparks/new", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link text-white" %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link text-white btn-gradient" %>
         </li>
       <% end %>
     </ul>
