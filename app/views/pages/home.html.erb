@@ -2,23 +2,24 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8 col-sm-12">
-        <div class="card-search my-3">
-          <div class="card-body m-3">
-            <h1 class="card-title">
-               <span id="banner-typed-text"></span>
-            </h1>
+        <div class="card-search">
+          <div class="card-search-body">
+            <h1 class="card-title">I'm looking for a carpark in</h1>
 
-            <p class="card-text mb-3">Find second home for your car, wherever you are, in Singapore.</p>
-
-            <%= form_tag("/search", method: "get") do %>
-              <%= label_tag(:query, "Address:", class: "col-form-label-lg") %>
-              <%= text_field_tag(:query, "", id: "search_address", class: "form-control mb-sm-2") %>
-              <%= label_tag(:date, "From:", class: "col-form-label") %>
-              <%= date_field(:date, :start_date, value: Date.today, class: "form-control mb-sm-2") %>
-              <%= label_tag(:date, "Until:", class: "col-form-label") %>
-              <%= date_field(:date, :end_date, value: (Date.today + 2.week), class: "form-control mb-sm-2") %>
-              <%= submit_tag("Search", class: "btn btn-outline-success mt-4") %>
-            <% end %>
+            <form class="form-inline">
+              <div class="form-group">
+                <h3 class="search-title">
+                   <span id="banner-typed-text"></span>
+                </h3>
+                <input type="text" for="query" class="form-control" id="search_address">
+                <span class="bmd-help">Enter the name of area, city or country.</span>
+                <span class="form-group bmd-form-group"> <!-- needed to match padding for floating labels -->
+                  <button type="submit" for="search" class="btn bmd-btn-icon">
+                    <i class="material-icons">Search</i>
+                  </button>
+                </span>
+              </div>
+            </form>
           </div>
         </div>
       </div>
