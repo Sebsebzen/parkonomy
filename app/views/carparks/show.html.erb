@@ -26,6 +26,8 @@
             <% else %>
               <%= link_to "My Dashboard", bookings_path, class: "btn btn-outline-success" %>
             <% end %>
+          <% else %>
+            <%= f.submit "Reserve now", class: "btn btn-outline-success"%>
           <% end %>
         <% end %>
       </div>
