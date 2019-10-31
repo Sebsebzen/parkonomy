@@ -1,4 +1,10 @@
 // Specific CSS for your home-page
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between
+}
 
 body {
   min-height: 100vh;

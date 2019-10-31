@@ -12,21 +12,20 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <%= render 'shared/navbar' %>
-    <%= yield %>
-    <%= render 'shared/flashes' %>
+    <div class="flex-wrapper">
+      <%= render 'shared/navbar' %>
+      <%= yield %>
+      <%= render 'shared/flashes' %>
 
-<!--     <div class="footer">
-      <div class="footer-links">
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-      </div>
+      <div class="footer">
+        <div class="footer-links">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
       <div class="footer-copyright">
         by csvonrails @ Le Wagon #306
-      </div>
-    </div> -->
-
+    </div>
     <!-- Load Javascript file last -->
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
