@@ -18,7 +18,7 @@
       <div class="card-product-infos booking-form-card" id='carpark-booking-dates' data-unavailable="<%= @carpark.unavailable_dates.to_json %>">
         <%= simple_form_for [@carpark, @booking] do |f| %>
           <h3 class="pt-3">Booking:</h3>
-          <%= f.input :start_date, as: :string, type: :text, class: "form-control ", placeholder: "Select your start date" %>
+          <%= f.input :start_date, as: :string, type: :text, class: "form-control", placeholder: "Select your start date" %>
           <%= f.input :end_date, as: :string, type: :text, class: "form-control", placeholder: "Select your end date" %>
           <% if user_signed_in? %>
             <% if current_user.id != @carpark.user_id  %>
