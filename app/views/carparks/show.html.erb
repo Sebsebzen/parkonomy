@@ -48,13 +48,14 @@
 <br>
 <div class ="container">
   <% @reviews.each do |review| %>
-    <div class ="row">
-      <div class="col-lg-8">
-        <div class="card-product-review">
-          <h2><%= review.rating %></h2>
-          <p>"<%= review.content %>" - <strong><%= review.booking.user.email %></strong></p>
-        </div>
-      </div>
+  <div class="card mb-3 bg-light col-8">
+    <div class="card-header">
+      Review by: <%= review.booking.user.email %>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Review Score: <%= review.rating %></h5>
+      <p class="card-text"><%= review.content %></p>
+    </div>
     </div>
     <% end %>
 </div>
