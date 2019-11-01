@@ -4,15 +4,19 @@ const loadDynamicBannerText = () => {
   const banner = document.querySelector("#search_address");
   if (banner) {
     new Typed('#search_address', {
-      strings: ["Singapore", "Tokyo", "London"],
-      typeSpeed: 80,
-      loop: true
-    });
-  }
-  const title = document.querySelector('.search-title')
-  banner.addEventListener("mouseover", (event) => {
-    title.innerHTML = '<input type="text" for="query" class="search-title form-control" id="search_address">'
+    strings: ["Melbourne", "Berlin", "Osaka", "Jakarta", "San Francisco"],
+    typeSpeed: 80,
+    backSpeed: 40,
+    attr: 'placeholder',
+    bindInputFocusEvents: true,
+    loop: true
   });
+  }
+  // const title = document.querySelector('.search-title')
+  // banner.addEventListener("mouseover", (event) => {
+  //  @param {Typed} self
+  // onDestroy: (self) => {}
+  // });
 }
 
 export { loadDynamicBannerText };

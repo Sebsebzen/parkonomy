@@ -11,5 +11,5 @@ initUpdateNavbarOnScroll();
 initAutocomplete();
 initMapbox();
 initFlatpickr();
-// loadDynamicBannerText();
+loadDynamicBannerText();
 

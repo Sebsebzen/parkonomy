@@ -22,7 +22,6 @@ const initUpdateNavbarOnScroll = () => {
   } else if (navbar) {
     window.addEventListener('scroll', () => {
     if (window.scrollY >= window.innerHeight*0.1) {
-      navbar.classList.remove('navbar-lewagon-opaque')
       navbar.classList.add('navbar-lewagon-white');
     } else {
       navbar.classList.remove('navbar-lewagon-white');

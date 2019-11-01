@@ -17,9 +17,7 @@
               <%#= submit_tag("Search", class: "btn btn-outline-success mt-4") %>
             <%# end %> -->
               <%= form_tag("/search", method: "get", id: "home_form", class: "my-5 text-center px-5" ) do %>
-                  <div class="search-title">
-                    <%= text_field_tag(:query, "", id: "search_address", class: "search-title form-control text-white p-5") %>
-                  </div>
+                    <%= text_field_tag(:query, "", id: "search_address", placeholder: "", class: "search-title form-control text-white p-5") %>
                   <div class="d-flex">
                     <%= date_field(:date, :start_date, value: Date.today, class: "form-control text-white mb-sm-2") %>
                     <%= date_field(:date, :end_date, value: (Date.today + 2.week), class: "form-control text-white mb-sm-2") %>
