@@ -9,9 +9,9 @@
 <div class="container">
   <div class="d-flex justify-content-center my-5">
     <% if @carparks.length > 0 %>
-      <h1 class="display-4">All matching Carparks for "<%= params[:query] %>" within 10km</h1>
+      <h1 class="display-4"><%= @carparks.length %> matching Carparks for <strong><%= params[:query] %></strong> within 10km</h1>
     <% else %>
-      <h1 class="display-4">No result matching <%= params[:query].capitalize %> </h1>
+      <h1 class="display-4">No  matching result for <%= params[:query].capitalize %> </h1>
     <% end %>
   </div>
     <div class="cards">
