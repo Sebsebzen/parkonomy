@@ -10,12 +10,12 @@
         <img src=<%= booking.carpark.photo %> />
         <div class="card-product-booking-infos">
           <% if booking.start_date > @today_date %>
-            <p class="my-2" id="remaining_days">
+            <p class="py-2" id="remaining_days">
               <%= (booking.start_date - @today_date).to_f.ceil %>
               days left
             </p>
           <% else %>
-            <p class="mb-1 mt-2" id="remaining_days">
+            <p class="py-2" id="remaining_days">
               Ongoing booking
             </p>
           <% end %>
