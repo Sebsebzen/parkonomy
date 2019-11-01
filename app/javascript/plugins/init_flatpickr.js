@@ -30,4 +30,5 @@ const initFlatpickr = () => {
 
 }
 
+
 export { initFlatpickr }

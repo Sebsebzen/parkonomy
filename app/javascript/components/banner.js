@@ -13,10 +13,9 @@ const loadDynamicBannerText = () => {
   });
   }
   // const title = document.querySelector('.search-title')
-  // banner.addEventListener("mouseover", (event) => {
-  //  @param {Typed} self
-  // onDestroy: (self) => {}
-  // });
+  banner.addEventListener('click', () => {
+    banner.setAttribute('placeholder', '')
+  })
 }
 
 export { loadDynamicBannerText };
