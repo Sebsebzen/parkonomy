@@ -7,7 +7,7 @@
 			<%= simple_form_for(@carpark) do |f| %>
         <div class="form-inputs">
           <div class="col-md-8 mx-auto">
-            <%= f.input :address %>
+            <%= f.input :address, id: "carpark_address" %>
           </div>
           <div class="d-flex col-md-8 mx-auto">
             <%= f.input :length, placeholder: "in cm" %>

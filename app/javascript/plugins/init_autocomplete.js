@@ -8,4 +8,13 @@ const initAutocomplete = () => {
   }
 };
 
+const initAutocomplete2 = () => {
+  const addressInput = document.getElementById('carpark_address');
+  
+  if (addressInput) {
+    places({ container: addressInput });
+  }
+};
+
 export { initAutocomplete };
+export { initAutocomplete2 };

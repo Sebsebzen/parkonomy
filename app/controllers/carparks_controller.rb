@@ -4,6 +4,15 @@ class CarparksController < ApplicationController
 
   def index
     @carparks = Carpark.all
+
+    @markers = @carparks.map do |carpark|
+      {
+        lat: carpark.latitude,
+        lng: carpark.longitude,
+        id: carpark.id,
+        address: carpark.address
+      }
+    end
   end
 
   def search
