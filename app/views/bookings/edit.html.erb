@@ -19,11 +19,20 @@
     </div>
 
     <div class="col-lg-4">
-      <div class="card-product-infos booking-form-card">
-        <%= simple_form_for [@booking], html: { class: 'form-group' } do |f| %>
-          <%= f.input :start_date, as: :date, html5: true, class: "form-control" %>
-          <%= f.input :end_date, as: :date, html5: true, class: "form-control" %>
-          <%= f.submit "Update booking", class: "btn btn-outline-success"%>
+      <div class="card-product-infos booking-form-card" id='carpark-booking-dates' data-unavailable="<%= @booking.carpark.unavailable_dates.to_json %>">
+        <%= simple_form_for  @booking do |f| %>
+          <h3 class="pt-3">Booking:</h3>
+          <%= f.input :start_date, as: :string, type: :text, class: "form-control", placeholder: "Select your start date" %>
+          <%= f.input :end_date, as: :string, type: :text, class: "form-control", placeholder: "Select your end date" %>
+          <% if user_signed_in? %>
+            <% if current_user.id != @booking.carpark.user_id  %>
+              <%= f.submit "Reserve now", class: "btn btn-outline-success mt-5"%>
+            <% else %>
+              <%= link_to "My Dashboard", bookings_path, class: "btn btn-outline-success mt-5" %>
+            <% end %>
+          <% else %>
+            <%= f.submit "Reserve now", class: "btn btn-outline-success mt-5"%>
+          <% end %>
         <% end %>
       </div>
     </div>
