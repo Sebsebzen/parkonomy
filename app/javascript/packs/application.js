@@ -12,4 +12,3 @@ initAutocomplete();
 initMapbox();
 initFlatpickr();
 loadDynamicBannerText();
-
