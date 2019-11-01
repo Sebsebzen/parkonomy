@@ -15,9 +15,11 @@ const loadDynamicBannerText = () => {
   });
   }
   // const title = document.querySelector('.search-title')
+  if (banner) {
   banner.addEventListener('click', () => {
     banner.setAttribute('placeholder', '')
   })
+  }
 }
 
 export { loadDynamicBannerText };
