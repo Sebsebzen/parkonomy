@@ -1,24 +1,28 @@
-<div class="container my-5 pt-5">
-  <h1 class="head text-center my-3">Upcoming Bookings</h1>
+<div class="banner-bookings">
+  <div class="container">
+    <h1 class="head text-center my-5 py-5">Upcoming Bookings</h1>
+  </div>
+</div>
+<div class="container my-5">
   <div class="col-md-8 mt-5 mx-auto">
     <% @bookings.each do |booking| %>
       <div class="card-product">
         <img src=<%= booking.carpark.photo %> />
         <div class="card-product-booking-infos">
           <% if booking.start_date > @today_date %>
-            <p class="my-1" id="remaining_days">
+            <p class="my-2" id="remaining_days">
               <%= (booking.start_date - @today_date).to_f.ceil %>
               days left
             </p>
           <% else %>
-            <p class="my-1" id="remaining_days">
-              Current booking
+            <p class="mb-1 mt-2" id="remaining_days">
+              Ongoing booking
             </p>
           <% end %>
           <h2 id="booking-link"><%= link_to booking.carpark.address, edit_booking_path(booking) %></h2>
-          <p>Booking date: <%= booking.start_date %> to <%= booking.end_date %></p>
-          <%= link_to "Edit", edit_booking_path(booking), class: "btn btn-primary" %>
-          <%= link_to "Cancel", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel the booking?" }, class: "btn btn-primary" %>
+          <p class="mb-2 mt-1">Booking date: <%= booking.start_date %> to <%= booking.end_date %></p>
+          <%= link_to "Edit Booking", edit_booking_path(booking), class: "btn btn-primary" %>
+          <%= link_to "Cancel Booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel the booking?" }, class: "btn btn-primary" %>
         </div>
       </div>
     <% end %>

@@ -21,6 +21,14 @@ body {
   padding-top: 20vh;
 }
 
+.banner-bookings {
+  background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(asset_path("chuttersnap-zHhFKYYas7o-unsplash.jpg"));
+  background-size: cover;
+  height: 30vh;
+  color: white;
+  // color: #eee;
+  text-align: left;
+}
 
 .home-form {
   display: flex;

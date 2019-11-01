@@ -4,6 +4,8 @@ class Carpark < ApplicationRecord
   has_many :users, through: :bookings
   has_many :reviews, through: :bookings
   validates :address, presence: true
+  # validates :length, :width, :height, :rate_day, presence: true
+  validates :rate_day, numericality: true
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
